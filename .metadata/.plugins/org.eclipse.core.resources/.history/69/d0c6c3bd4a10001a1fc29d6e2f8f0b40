@@ -1,0 +1,19 @@
+package com.yangquan.server.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+@Controller
+@RequestMapping("/push")
+public class PushController {
+	
+//	@Autowired
+//	private PushExample example;
+//	
+//	@RequestMapping("/send")
+//	public void sendPush(){
+//		example.testSendPush();
+//	}
+}

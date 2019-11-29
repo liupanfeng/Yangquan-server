@@ -1,0 +1,43 @@
+package com.yangquan.server.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.yangquan.mapper.YangquanVersionMapper;
+import com.yangquan.pojo.YangquanVersion;
+import com.yangquan.server.service.YangquanVersionService;
+import com.yangquan.utils.ResponseResult;
+
+@Service
+public class YangquanVersionServiceImpl implements YangquanVersionService {
+	
+	@Autowired
+	private YangquanVersionMapper mapper;
+	
+	
+	@Override
+	public ResponseResult addYangquanVersion(YangquanVersion yangquanVersion) {
+		mapper.insert(yangquanVersion);
+		return ResponseResult.build(200, "添加新版本成功", yangquanVersion);;
+	}
+
+	@Override
+	public ResponseResult deleteYangquanVersion(YangquanVersion yangquanVersion) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResponseResult updateYangquanVersion(YangquanVersion yangquanVersion) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResponseResult getYangquanVersion() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}

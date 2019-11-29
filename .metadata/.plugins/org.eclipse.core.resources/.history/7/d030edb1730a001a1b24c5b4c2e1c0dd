@@ -1,0 +1,23 @@
+package com.yangquan.server.service;
+
+import com.yangquan.pojo.SheepNews;
+import com.yangquan.utils.ResponseResult;
+
+/**
+ * 这个用于展示咨询历史 
+ */
+public interface HistoryPriceService {
+	
+	public ResponseResult addHistoryPrice(com.yangquan.pojo.HistoryPrice sheepNews);
+	
+	public ResponseResult deleteHistoryPrice(SheepNews sheepNews);
+	
+	public ResponseResult updateHistoryPrice(SheepNews sheepNews);
+	/**
+	 * 
+	 * @param sheepNews
+	 * @return
+	 */
+	public ResponseResult getHistoryPrice(SheepNews sheepNews);
+	
+}

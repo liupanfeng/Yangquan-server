@@ -1,0 +1,7 @@
+package com.yangquan.server.service.impl;
+
+import com.yangquan.server.service.SystemMessageService;
+
+public class SystemMessageImpl implements SystemMessageService{
+
+}

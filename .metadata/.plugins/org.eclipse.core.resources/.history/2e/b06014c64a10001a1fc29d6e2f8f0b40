@@ -1,0 +1,25 @@
+package com.yangquan.server.service.impl;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class JiPushServiceImpl {
+	
+//	private static JPushClient getJpushClient() throws Exception {
+//		String masterSecret = PropertiesUtil.getPropertiesByPathname(JdyCommonConst.IM_PROPERTY_PATH)
+//				.get(JdyCommonConst.JIGUANG_MASTER_SECRET);
+//		String appKey = PropertiesUtil.getPropertiesByPathname(JdyCommonConst.IM_PROPERTY_PATH)
+//				.get(JdyCommonConst.JIGUSNG_APP_KEY);
+//		/*
+//		 * String appKey = "f156f32c2b8cd81418819e1b"; String masterSecret =
+//		 * "ef7db9ad98aecff4c773c6b9";
+//		 */
+//		ClientConfig config = ClientConfig.getInstance();
+//		config.setApnsProduction(false); // development env
+//		config.setTimeToLive(60 * 60 * 24 * 10); // ten day
+//		config.setMaxRetryTimes(5);
+//		config.setConnectionTimeout(10 * 1000); // 10 seconds
+//		return new JPushClient(masterSecret, appKey, null, config);
+//	}
+
+}

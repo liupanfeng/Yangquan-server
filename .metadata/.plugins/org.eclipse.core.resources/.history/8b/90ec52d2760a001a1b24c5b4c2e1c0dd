@@ -1,0 +1,36 @@
+package com.yangquan.server.service.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.yangquan.pojo.HistoryPrice;
+import com.yangquan.pojo.SheepNews;
+import com.yangquan.utils.ResponseResult;
+
+@Service
+public class HistoryPriceService implements com.yangquan.server.service.HistoryPriceService {
+
+	@Override
+	public ResponseResult addHistoryPrice(HistoryPrice historyPrice) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResponseResult deleteHistoryPrice(HistoryPrice historyPrice) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResponseResult updateHistoryPrice(HistoryPrice historyPrice) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResponseResult getHistoryPrice(SheepNews sheepNews) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

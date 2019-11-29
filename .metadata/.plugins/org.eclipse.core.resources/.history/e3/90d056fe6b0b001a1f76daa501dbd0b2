@@ -1,0 +1,5 @@
+package com.yangquan.server.controller;
+
+public class UserTokenController {
+
+}

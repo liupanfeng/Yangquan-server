@@ -1,0 +1,33 @@
+package com.yangquan.server.service.impl;
+
+import com.yangquan.pojo.Comment;
+import com.yangquan.server.service.CommentService;
+import com.yangquan.utils.ResponseResult;
+
+public class CommentServiceImpl implements CommentService {
+
+	@Override
+	public ResponseResult addComment(Comment comment) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResponseResult deleteComment(Comment comment) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResponseResult updateComment(Comment comment) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResponseResult getComment(long messageId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

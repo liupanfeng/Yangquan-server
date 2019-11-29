@@ -1,0 +1,65 @@
+package com.yangquan.server.controller;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.google.gson.JsonObject;
+import com.sun.tools.javac.util.Log;
+import com.yangquan.utils.ResponseResult;
+
+import cn.jiguang.common.resp.APIConnectionException;
+import cn.jiguang.common.resp.APIRequestException;
+import cn.jsms.api.SendSMSResult;
+import cn.jsms.api.common.SMSClient;
+import cn.jsms.api.common.model.SMSPayload;
+
+@Controller
+@RequestMapping("/sms")
+public class SmsController {
+	
+	private static final String appKey = "16e4843c6591302c5d1b26de";
+	private static final String masterSecret = "9717ca9c3d6a17b0a58ed802";
+	
+	
+	 private SMSClient client = null;
+	 
+	@RequestMapping("/send")
+	@ResponseBody
+	public ResponseResult sendSmsMessage(){
+		client = new SMSClient(masterSecret, appKey);
+		
+		return ResponseResult.build(200, "短信发送成功");
+	}
+	
+	
+	 public void testSendSMSCode() {
+	        SMSPayload payload = SMSPayload.newBuilder()
+	                .setMobileNumber("17762407170")
+	                .setTempId(1)
+	                // .setSignId(1380)
+	                .build();
+
+	        JsonObject json = new JsonObject();
+	        json.addProperty("mobile", "17762407170");
+	        json.addProperty("temp_id", 1);
+
+//	        assertEquals(payload.toJSON(), json);
+
+	        try {
+	            SendSMSResult res = client.sendSMSCode(payload);
+	            assertTrue(res.isResultOK());
+//	            Log.(res.toString());
+	        } catch (APIConnectionException e) {
+//	            LOG.error("Connection error. Should retry later. ", e);
+	        } catch (APIRequestException e) {
+//	            LOG.error("Error response from JPush server. Should review and fix it. ", e);
+//	            LOG.info("HTTP Status: " + e.getStatus());
+//	            LOG.info("Error Message: " + e.getMessage());
+	        }
+
+	    }
+}

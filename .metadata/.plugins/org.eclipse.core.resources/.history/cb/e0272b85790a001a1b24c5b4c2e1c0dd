@@ -1,0 +1,42 @@
+package com.yangquan.server.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.yangquan.mapper.MessageMapper;
+import com.yangquan.pojo.Message;
+import com.yangquan.pojo.User;
+import com.yangquan.server.service.MessageService;
+import com.yangquan.utils.ResponseResult;
+
+@Service
+public class MessageServiceImpl implements MessageService {
+	
+	@Autowired
+	private MessageMapper mapper;
+	
+	@Override
+	public ResponseResult addMessage(Message message) {
+		mapper.insert(message);
+		return null;
+	}
+
+	@Override
+	public ResponseResult deleteMessage(Message message) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResponseResult updateMessage(Message message) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResponseResult getMessage(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

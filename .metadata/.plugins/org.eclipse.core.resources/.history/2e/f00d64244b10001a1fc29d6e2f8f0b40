@@ -1,0 +1,36 @@
+package com.yangquan.server.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.yangquan.server.service.impl.JiPushServiceImpl;
+import com.yangquan.utils.ThreadPool;
+
+
+
+@Controller
+@RequestMapping("/push")
+public class PushController {
+	
+	@Autowired
+	private JiPushServiceImpl jiPushService;
+	
+	
+	@RequestMapping("/send")
+	public void sendPush(){
+		
+		 //推送
+        ThreadPool.runInFixed(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    jiPushService.sendPush(1,1,1425,"关注通知","国泰" + "关注了你","0");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+	}
+	
+}

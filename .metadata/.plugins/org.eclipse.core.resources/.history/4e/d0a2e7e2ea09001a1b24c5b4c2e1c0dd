@@ -1,0 +1,32 @@
+package com.yangquan.server.service.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.yangquan.pojo.ServerZan;
+import com.yangquan.server.service.ServerZanService;
+import com.yangquan.utils.ResponseResult;
+
+@Service
+public class ServerZanServiceImpl implements ServerZanService {
+
+	public ResponseResult addServerZan(ServerZan serverZan) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResponseResult deleteServerZan(ServerZan serverZan) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResponseResult selectServerZan() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResponseResult updateServerZan(ServerZan serverZan) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

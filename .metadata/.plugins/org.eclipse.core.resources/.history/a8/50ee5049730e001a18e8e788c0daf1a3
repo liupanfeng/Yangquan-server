@@ -1,0 +1,33 @@
+package com.yangquan.server.service.impl;
+
+import com.yangquan.pojo.YangquanVersion;
+import com.yangquan.server.service.YangquanVersionService;
+import com.yangquan.utils.ResponseResult;
+
+public class YangquanVersionServiceImpl implements YangquanVersionService {
+
+	@Override
+	public ResponseResult addYangquanVersion(YangquanVersion yangquanVersion) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResponseResult deleteYangquanVersion(YangquanVersion yangquanVersion) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResponseResult updateYangquanVersion(YangquanVersion yangquanVersion) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResponseResult getYangquanVersion() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 10 resources" deleteContents="false" description="Delete 10 resources" element1="/yangquan-common" element10="/yangquan-sso" element2="/yangquan-manager" element3="/yangquan-manager-mapper" element4="/yangquan-manager-pojo" element5="/yangquan-manager-service" element6="/yangquan-manager-web" element7="/yangquan-parent" element8="/yangquan-portal" element9="/yangquan-rest" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="10" stamp="1573105295431"/>
+</session>

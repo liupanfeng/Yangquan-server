@@ -1,0 +1,75 @@
+package com.yangquan.server.service.impl;
+
+import java.util.List;
+import java.util.UUID;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.yangquan.mapper.UserMapper;
+import com.yangquan.pojo.User;
+import com.yangquan.pojo.UserExample;
+import com.yangquan.pojo.UserExample.Criteria;
+import com.yangquan.server.service.UserService;
+import com.yangquan.utils.ExceptionUtil;
+import com.yangquan.utils.IDUtils;
+import com.yangquan.utils.ResponseResult;
+
+/**
+ * service 里边不要添加try catch 因为如果出问题，被抓住的话，事务不会起作用
+ * 
+ * @author root
+ *
+ */
+@Service
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	private UserMapper userMapper;
+
+	/**
+	 * 注册接口，这里自动帮用户生成user_id
+	 */
+	@Override
+	public ResponseResult createUser(User user) {
+		user.setUserId(IDUtils.genItemId());
+		userMapper.insert(user);
+		return ResponseResult.build(200, "注册成功！");
+	}
+
+	/**
+	 * 用户登录，现在只需要手机号进行登录
+	 */
+	@Override
+	public ResponseResult userLogin(String phoneNum) {
+		UserExample example = new UserExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andPhoneNumberEqualTo(phoneNum);
+		List<User> list = userMapper.selectByExample(example);
+		if (list == null || list.isEmpty()) {
+			// 未注册提示先进行注册再登录
+			return ResponseResult.build(404, "请先注册再登录");
+		}
+		// 生成token
+		String token = UUID.randomUUID().toString();
+		// 将token插入数据库
+		User user = list.get(0);
+		user.setTokenId(token);
+		// 更新数据库
+		updateUser(user);
+		return ResponseResult.build(200, "登录成功", user);
+	}
+
+	@Override
+	public ResponseResult updateUser(User user) {
+		userMapper.updateByPrimaryKey(user);
+		return ResponseResult.build(200, "更新成功", user);
+	}
+
+	@Override
+	public ResponseResult deleteUser(User user) {
+		userMapper.deleteByPrimaryKey(user.getId());
+		return null;
+	}
+
+}
